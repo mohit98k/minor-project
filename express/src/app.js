@@ -9,6 +9,13 @@ app.use(cookieParser());
 //     credentials: true
 // }));
 
+
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        status: "ok"
+    });
+});
+
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
 

@@ -42,6 +42,10 @@ model = tf.keras.models.load_model(
 # )
 # )
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     try:
