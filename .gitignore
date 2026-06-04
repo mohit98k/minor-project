@@ -10,9 +10,9 @@ venv/
 env/
 
 # Large local ML Datasets / Models
-*.keras
-*.h5
-dataset/
+# *.keras
+# *.h5
+# dataset/
 
 # Environment variables / secrets
 .env
