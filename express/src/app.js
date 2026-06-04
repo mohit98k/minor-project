@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 import authRoutes from "./routes/auth.routes.js";
 app.use("/api/v1/auth",authRoutes);
 
-import predictRoutes from "./routes/predict.routes.js";
-app.use("/api/v1/predict",predictRoutes);
+import mlService from "./routes/predict.routes.js";
+app.use("/api/v1/mlService",mlService);
 
 export default app;

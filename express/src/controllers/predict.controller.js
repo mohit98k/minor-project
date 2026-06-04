@@ -1,5 +1,7 @@
 import axios from "axios";
 import FormData from "form-data";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const predictDryEye = async (req, res) => {
     try {
@@ -14,7 +16,7 @@ export const predictDryEye = async (req, res) => {
             contentType: req.file.mimetype,
         });
 
-        const pythonServiceUrl = "http://localhost:8000/predict";
+        const pythonServiceUrl = process.env.PYTHON_BACKEND || "http://localhost:8000/predict";
         const response = await axios.post(pythonServiceUrl, formData, {
             headers: {
                 ...formData.getHeaders(),
