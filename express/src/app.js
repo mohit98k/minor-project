@@ -10,11 +10,7 @@ app.use(cookieParser());
 // }));
 
 
-app.get("/health", (req, res) => {
-    res.status(200).json({
-        status: "ok"
-    });
-});
+
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
@@ -24,5 +20,11 @@ app.use("/api/v1/auth",authRoutes);
 
 import mlService from "./routes/predict.routes.js";
 app.use("/api/v1/mlService",mlService);
+
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        status: "ok"
+    });
+});
 
 export default app;
