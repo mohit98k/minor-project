@@ -32,7 +32,7 @@ document
     );
 
     const response = await fetch(
-        `${API_BASE_URL}/predict`,
+        `https://minor-project-node.onrender.com/api/v1/mlService/predict`,
         {
             method:"POST",
             headers:{
