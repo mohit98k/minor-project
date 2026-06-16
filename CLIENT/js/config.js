@@ -1,0 +1,1 @@
+const API_BASE_URL = "https://minor-project-node.onrender.com/api/v1";

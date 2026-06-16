@@ -1,0 +1,56 @@
+const imageInput =
+document.getElementById("imageInput");
+
+const preview =
+document.getElementById("preview");
+
+let selectedFile;
+
+imageInput.addEventListener("change",(e)=>{
+
+    selectedFile = e.target.files[0];
+
+    preview.src =
+    URL.createObjectURL(selectedFile);
+
+});
+
+document
+.getElementById("predictBtn")
+.addEventListener("click",async ()=>{
+
+    if(!selectedFile){
+        alert("Select image");
+        return;
+    }
+
+    const formData = new FormData();
+
+    formData.append(
+        "image",
+        selectedFile
+    );
+
+    const response = await fetch(
+        `${API_BASE_URL}/predict`,
+        {
+            method:"POST",
+            headers:{
+                Authorization:
+                `Bearer ${
+                    localStorage.getItem("token")
+                }`
+            },
+            body:formData
+        }
+    );
+
+    const data =
+    await response.json();
+
+    document
+    .getElementById("result")
+    .innerText =
+    `Prediction : ${data.prediction}`;
+
+});
