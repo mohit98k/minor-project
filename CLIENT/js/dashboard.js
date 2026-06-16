@@ -32,18 +32,13 @@ document
     );
 
     const response = await fetch(
-        `https://minor-project-node.onrender.com/api/v1/mlService/predict`,
-        {
-            method:"POST",
-            headers:{
-                Authorization:
-                `Bearer ${
-                    localStorage.getItem("token")
-                }`
-            },
-            body:formData
-        }
-    );
+    "https://minor-project-node.onrender.com/api/v1/mlService/predict",
+    {
+        method:"POST",
+        credentials:"include",
+        body:formData
+    }
+);
 
     const data =
     await response.json();

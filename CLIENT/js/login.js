@@ -10,28 +10,38 @@ document
     const password =
     document.getElementById("password").value;
 
-    const response = await fetch(
-        `${API_BASE_URL}/auth/login`,
-        {
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                email,
-                password
-            })
+    try{
+
+        const response = await fetch(
+            `${API_BASE_URL}/auth/login`,
+            {
+                method:"POST",
+                credentials:"include",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    email,
+                    password
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if(!response.ok){
+            alert(data.message || "Login failed");
+            return;
         }
-    );
 
-    const data = await response.json();
+        console.log(data);
 
-    localStorage.setItem(
-        "token",
-        data.token
-    );
+        window.location.href =
+        "./dashboard.html";
 
-    window.location.href =
-    "./dashboard.html";
+    }catch(error){
+        console.error(error);
+        alert("Something went wrong");
+    }
 
 });
