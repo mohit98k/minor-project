@@ -18,7 +18,7 @@ document
     document.getElementById("password").value;
 
     await fetch(
-        `https://minor-project-node.onrender.com/api/v1/auth/register`,
+        `${API_BASE_URL}/auth/register`,
         {
             method:"POST",
             headers:{
