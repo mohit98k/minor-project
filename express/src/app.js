@@ -9,7 +9,7 @@ app.use(cors({
     origin: [
         "http://127.0.0.1:3000",
         "http://localhost:3000",
-        "https://minor-project-virid-rho.vercel.app"
+        "https://minor-project-lime-alpha.vercel.app"
     ],
     credentials: true
 }));
