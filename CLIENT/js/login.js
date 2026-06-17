@@ -42,7 +42,7 @@ for (const [key, value] of response.headers.entries()) {
             return;
         }
 
-   // window.location.href = "./dashboard.html";
+    window.location.href = "./dashboard.html";
 
     } catch (error) {
 
