@@ -27,7 +27,7 @@ document
     const formData = new FormData();
 
     formData.append(
-        "image",
+        "file",
         selectedFile
     );
 
@@ -46,6 +46,7 @@ document
     document
     .getElementById("result")
     .innerText =
-    `Prediction : ${data.prediction}`;
+    `Prediction: ${data.prediction}
+    Confidence: ${data.confidence}`;
 
 });

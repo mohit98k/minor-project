@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Dry Eye Detection</title>
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
 
 <div class="container">
 
+    <div class="profile-card">
+
+        <div class="avatar">
+            U
+        </div>
+
+        <div class="user-info">
+            <h2 id="fullName">User Name</h2>
+            <p id="userName">@username</p>
+            <p id="email">email@gmail.com</p>
+        </div>
+
+    </div>
+
     <h1>Dry Eye Detection</h1>
 
-    <input
-        type="file"
-        id="imageInput"
-        accept="image/*"
-    >
+    <div class="upload-section">
 
-    <img
-        id="preview"
-        src=""
-        alt=""
-    >
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+        >
 
-    <button id="predictBtn">
-        Predict
-    </button>
+        <img
+            id="preview"
+            src=""
+            alt="Preview"
+        >
+
+        <button id="predictBtn">
+            Analyze Eye Image
+        </button>
+
+    </div>
 
     <div id="result">
-
+        Upload an image and click Analyze
     </div>
 
 </div>

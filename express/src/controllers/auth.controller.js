@@ -78,9 +78,15 @@ import User from "../models/user.model.js";
 
         const loggedInUser=await User.findById(user._id).select("-password -refreshToken");
 
-        const options={
-            httpOnly:true, 
-            secure:process.env.NODE_ENV === "production", 
+        // const options={
+        //     httpOnly:true, 
+        //     secure:process.env.NODE_ENV === "production", 
+        // }
+
+        const options = {
+            httpOnly:true,
+            secure:true,
+            sameSite:"none"
         }
         console.log('logged in successfully '+ loggedInUser.userName); 
         
