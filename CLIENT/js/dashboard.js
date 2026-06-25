@@ -49,4 +49,7 @@ document
     `Prediction: ${data.prediction}
     Confidence: ${data.confidence}`;
 
+
+    // document.getElementById("fullName").innerText=${data.}
+
 });

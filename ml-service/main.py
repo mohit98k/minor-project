@@ -14,34 +14,6 @@ model = tf.keras.models.load_model(
     compile=False
 )
 
-# import numpy as np
-
-# x1 = np.random.randint(
-# 0,
-# 256,
-# (1,224,224,3)
-# ).astype("float32")
-
-# x2 = np.random.randint(
-# 0,
-# 256,
-# (1,224,224,3)
-# ).astype("float32")
-
-# print(
-# model.predict(
-# x1,
-# verbose=0
-# )
-# )
-
-# print(
-# model.predict(
-# x2,
-# verbose=0
-# )
-# )
-
 @app.get("/health")
 def health():
     return {"status": "ok"}
