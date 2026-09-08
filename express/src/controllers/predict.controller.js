@@ -16,7 +16,7 @@ export const predictDryEye = async (req, res) => {
             contentType: req.file.mimetype,
         });
 
-        const pythonServiceUrl = process.env.PYTHON_BACKEND ;
+        const pythonServiceUrl = "https://minor-project-python.onrender.com/predict";
         const response = await axios.post(pythonServiceUrl, formData, {
             headers: {
                 ...formData.getHeaders(),
